@@ -34,9 +34,9 @@ public class Main {
     public static void joga_cartas_fora(){
         cartas_descartadas = "Discarded cards: ";
         cartas_remanescentes = "Remaining cards: ";
-        // testar com while(quantidade_restante_cartas > 2)
         while (quantidade_restante_cartas >= 2) {
-            if(topo.prox.prox == null)
+            quantidade_restante_cartas --;
+            if(quantidade_restante_cartas == 1)
                 cartas_descartadas = cartas_descartadas + topo.numero_carta;
             else cartas_descartadas = cartas_descartadas + topo.numero_carta + ", ";
             topo = topo.prox;
@@ -46,7 +46,6 @@ public class Main {
             base.prox = topoAux;
             topoAux.prox = null;
             base = topoAux;
-            quantidade_restante_cartas --;
         }
         cartas_remanescentes = cartas_remanescentes + topo.numero_carta;
     }
